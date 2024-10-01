@@ -7,6 +7,7 @@ const App = () => {
 
   useEffect(() => {
     const tg = window.Telegram.WebApp; // Получаем объект webapp телеграма
+console.log(tg,'tg');
 
     tg.expand(); // Расширяем на все окно
 
@@ -53,6 +54,7 @@ const App = () => {
         fontSize: "18px",
       }}
     >
+      asd
       <div id="usercard">
         <p>
           {user.first_name} {user.last_name} {user.username} (
