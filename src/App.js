@@ -1,12 +1,10 @@
 import "./App.module.css";
-import { TimeBasedImage } from "./components/TimeBasedImage/TimeBasedImage";
-import { BottomBar } from "./components/BottomBar/BottomBar";
+import { Farm } from "./components/Farm/Farm";
 
 function App() {
   return (
     <div className="App">
-      <TimeBasedImage />
-      <BottomBar />
+      <Farm />
     </div>
   );
 }

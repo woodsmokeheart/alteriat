@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { BottomBar } from "../BottomBar/BottomBar";
+import { FarmScale } from "../FarmScale/FarmScale";
 
-export const TimeBasedImage = () => {
+import css from "./Farm.module.css";
+
+export const Farm = () => {
   const [currentImage, setCurrentImage] = useState("");
 
   // Функция для определения текущего времени суток
@@ -41,6 +45,11 @@ export const TimeBasedImage = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-    ></div>
+    >
+      <div className={css.content}>
+        <FarmScale />
+      </div>
+      <BottomBar />
+    </div>
   );
 };
