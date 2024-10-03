@@ -47,32 +47,47 @@ export const FarmScale = () => {
 
   return (
     <div className={css.wrapper}>
-      <div className={css.points_counter}>
-        <div>
-          <img
-            width="74"
-            height="74"
-            src="https://img.icons8.com/3d-fluency/94/dollar-coin.png"
-            alt="dollar-coin"
-          />
+      <div className={css.farm_container}>
+        <div className={css.points_counter}>
+          <div>
+            <img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/3d-fluency/94/dollar-coin.png"
+              alt="dollar-coin"
+            />
+          </div>
+          <div className={css.counter}>{totalPoints}</div> {/* общий счётчик */}
         </div>
-        <div className={css.counter}>{totalPoints}</div> {/* общий счётчик */}
-      </div>
-
-      <div className={css.progressWrapper}>
-        <div className={css.progressBar} style={{ width: `${progress}%` }}>
-          <div className={css.earnedPoints}>{earnedPoints}</div>
-          {/* очки на прогресс-баре */}
+        <div className={css.progress_container}>
+          <div className={css.progressWrapper}>
+            <div
+              className={css.progressBar}
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+          <div className={css.progress_counters}>
+            <div className={css.earnedPoints}>
+              <div>+3</div> wALTR/SEC
+            </div>
+            <div className={css.earnedPoints}>
+              <div>{earnedPoints}</div> wALTR
+            </div>
+            <div className={css.button_container}>
+              {!isFarming && !isCompleted && (
+                <button className={css.button_farm} onClick={startFarm}>
+                  Start farm
+                </button>
+              )}
+              {isCompleted && (
+                <button className={css.button_farm} onClick={getPoints}>
+                  Get Points
+                </button>
+              )}
+            </div>
+          </div>
         </div>
       </div>
-
-      {!isFarming && !isCompleted && (
-        <button onClick={startFarm}>Start farm</button> // кнопка для начала процесса
-      )}
-
-      {isCompleted && (
-        <button onClick={getPoints}>Get Points</button> // кнопка для получения очков
-      )}
     </div>
   );
 };

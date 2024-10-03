@@ -20,19 +20,19 @@ export const Farm = () => {
     const timeOfDay = getTimeOfDay();
     switch (timeOfDay) {
       case "morning":
-        setCurrentImage("/images/morning.png");
+        setCurrentImage("/images/char/Drago.png");
         break;
       case "day":
-        setCurrentImage("/images/day.png");
+        setCurrentImage("/images/char/Tark.png");
         break;
       case "evening":
-        setCurrentImage("/images/evening.png");
+        setCurrentImage("/images/char/Rose.png");
         break;
       case "night":
-        setCurrentImage("/images/night.png");
+        setCurrentImage("/images/char/Den.png");
         break;
       default:
-        setCurrentImage("/images/day.png"); // По умолчанию дневное изображение
+        setCurrentImage("/images/char/Drago.png"); // По умолчанию дневное изображение
     }
   }, []);
 

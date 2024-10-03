@@ -8,6 +8,24 @@ export const BottomBar = () => {
         <img
           width="34"
           height="34"
+          src="https://img.icons8.com/arcade/64/treasure-chest.png"
+          alt="treasure-chest"
+        />
+        Earn
+      </button>
+      <button className={css.bottom_button}>
+        <img
+          width="34"
+          height="34"
+          src="https://img.icons8.com/arcade/64/armored-breastplate.png"
+          alt="armored-breastplate"
+        />
+        Skins
+      </button>
+      <button className={css.bottom_button}>
+        <img
+          width="34"
+          height="34"
           src="https://img.icons8.com/arcade/64/armored-helmet.png"
           alt="armored-helmet"
         />
@@ -21,24 +39,6 @@ export const BottomBar = () => {
           alt="mana"
         />
         Boosters
-      </button>
-      <button className={css.bottom_button}>
-        <img
-          width="34"
-          height="34"
-          src="https://img.icons8.com/arcade/64/medieval-barracks.png"
-          alt="medieval-barracks"
-        />
-        English
-      </button>
-      <button className={css.bottom_button}>
-        <img
-          width="34"
-          height="34"
-          src="https://img.icons8.com/arcade/64/treasure-chest.png"
-          alt="treasure-chest"
-        />
-        Earn
       </button>
       <button className={css.bottom_button}>
         <img
