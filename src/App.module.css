@@ -46,6 +46,35 @@ button:disabled {
   cursor: default;
 }
 
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.ReactModal__Content {
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.ReactModal__Content--after-open {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.ReactModal__Content--before-close {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

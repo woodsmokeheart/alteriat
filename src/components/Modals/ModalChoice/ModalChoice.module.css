@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Acme", sans-serif;
+}
+
+.button_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.button_gender {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  > img {
+    margin-bottom: 5px;
+  }
+}
+
+/* Анимация для скрытия контента */
+.close-content {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Анимация для скрытия оверлея */
+.fade-overlay {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
