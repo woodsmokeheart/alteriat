@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { BottomBar } from "../BottomBar/BottomBar";
-import { FarmScale } from "../FarmScale/FarmScale";
+import { useState, useEffect } from "react";
+import { BottomBar } from "../../BottomBar/BottomBar";
+import { FarmScale } from "../../FarmScale/FarmScale";
+import { useCreateUserStore } from "../../store/userStore";
 
-import css from "./Farm.module.css";
-import { useCreateUserStore } from "../store/userStore";
+import css from "./FarmPage.module.css";
 
-export const Farm = () => {
+export const FarmPage = () => {
   const [currentImage, setCurrentImage] = useState("");
 
   // Получаем пол пользователя из хранилища

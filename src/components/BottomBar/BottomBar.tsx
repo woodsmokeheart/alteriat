@@ -1,10 +1,11 @@
-import React from "react";
-import css from "./BottomBar.module.css"; // Подключим стили для кнопок
+import { Link } from "react-router-dom";
+
+import css from "./BottomBar.module.css";
 
 export const BottomBar = () => {
   return (
     <div className={css.bottom_bar}>
-      <button className={css.bottom_button}>
+      <Link to="/earn" className={css.bottom_button}>
         <img
           width="34"
           height="34"
@@ -12,8 +13,8 @@ export const BottomBar = () => {
           alt="treasure-chest"
         />
         Earn
-      </button>
-      <button className={css.bottom_button}>
+      </Link>
+      <Link to="/skins" className={css.bottom_button}>
         <img
           width="34"
           height="34"
@@ -21,8 +22,8 @@ export const BottomBar = () => {
           alt="armored-breastplate"
         />
         Skins
-      </button>
-      <button className={css.bottom_button}>
+      </Link>
+      <Link to="/profile" className={css.bottom_button}>
         <img
           width="34"
           height="34"
@@ -30,8 +31,8 @@ export const BottomBar = () => {
           alt="armored-helmet"
         />
         Profile
-      </button>
-      <button className={css.bottom_button}>
+      </Link>
+      <Link to="/boosters" className={css.bottom_button}>
         <img
           width="34"
           height="34"
@@ -39,8 +40,8 @@ export const BottomBar = () => {
           alt="mana"
         />
         Boosters
-      </button>
-      <button className={css.bottom_button}>
+      </Link>
+      <Link to="/games" className={css.bottom_button}>
         <img
           width="34"
           height="34"
@@ -48,7 +49,7 @@ export const BottomBar = () => {
           alt="joystick"
         />
         Games
-      </button>
+      </Link>
     </div>
   );
 };

@@ -1,8 +1,17 @@
-import React, { useEffect, useState } from "react";
-import "./App.module.css";
-import { Farm } from "./components/Farm/Farm";
+import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import { FarmPage } from "./components/Pages/FarmPage/FarmPage";
 import { ModalChoice } from "./components/Modals/ModalChoice/ModalChoice";
 import { setUserGender } from "./components/store/userStore";
+
+import { EarnPage } from "components/Pages/EarnPage/EarnPage";
+import { SkinsPage } from "components/Pages/SkinsPage/SkinsPage";
+import { ProfilePage } from "components/Pages/ProfilePage/ProfilePage";
+import { BoostersPage } from "components/Pages/BoostersPage/BoostersPage";
+import { GamesPage } from "components/Pages/GamesPage/GamesPage";
+
+import "./App.module.css";
 
 function App() {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -32,14 +41,23 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Farm />
-      <ModalChoice
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        onSelect={handleSelectGender}
-      />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<FarmPage />} />
+          <Route path="/earn" element={<EarnPage />} />
+          <Route path="/skins" element={<SkinsPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/boosters" element={<BoostersPage />} />
+          <Route path="/games" element={<GamesPage />} />
+        </Routes>
+        <ModalChoice
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          onSelect={handleSelectGender}
+        />
+      </div>
+    </Router>
   );
 }
 

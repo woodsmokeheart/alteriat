@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const App = () => {
+export const TelegramUser = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isActive, setIsActive] = useState(true);
   const [user, setUser] = useState({});
@@ -100,5 +100,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;
