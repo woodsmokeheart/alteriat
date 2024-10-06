@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "./EarnPage.module.css";
 
 interface Channel {
@@ -49,9 +49,10 @@ export const EarnPage = () => {
       {channel ? (
         <div className={styles.channelItem}>
           <img
-            src={channel.avatar}
-            alt={`${channel.name} avatar`}
-            className={styles.avatar}
+            width="34"
+            height="34"
+            src="https://img.icons8.com/arcade/64/telegram-app.png"
+            alt="telegram-app"
           />
           <h2 className={styles.channelName}>{channel.name}</h2>
           <p className={styles.points}>{channel.points} очков за подписку</p>
