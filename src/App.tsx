@@ -17,15 +17,17 @@ function App() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [gender, setGender] = useState<string | null>(null);
 
+  console.log(gender, "gender");
+
   useEffect(() => {
     // Проверяем, был ли пользователь ранее (например, с помощью localStorage)
-    // const userGender = localStorage.getItem("userGender");
-    // if (!userGender) {
-    setModalOpen(true);
-    // } else {
-    // setGender(userGender);
-    // setUserGender(userGender); // записываем выбранный гендер в стор при новой проверке (пока нет бэкенда)
-    // }
+    const userGender = localStorage.getItem("userGender");
+    if (!userGender) {
+      setModalOpen(true);
+    } else {
+      setGender(userGender);
+      setUserGender(userGender); // записываем выбранный гендер в стор при новой проверке (пока нет бэкенда)
+    }
   }, []);
 
   const handleSelectGender = (selectedGender: string) => {
