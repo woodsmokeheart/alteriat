@@ -2,23 +2,38 @@ import { useState, useEffect } from "react";
 import { BottomBar } from "../../BottomBar/BottomBar";
 import { FarmScale } from "../../FarmScale/FarmScale";
 import { useCreateUserStore } from "../../store/userStore";
-
 import css from "./FarmPage.module.css";
 
 export const FarmPage = () => {
-  const [currentImage, setCurrentImage] = useState("");
-
-  // Получаем пол пользователя из хранилища
+  const [currentImage, setCurrentImage] = useState(
+    "/images/backgrounds/spark_loader.gif"
+  );
   const { userGender } = useCreateUserStore();
 
   useEffect(() => {
-    // Логика для показа изображения в зависимости от пола
+    // Функция для предзагрузки и изменения изображения
+    const preloadImage = (src: string) => {
+      const img = new Image();
+      img.src = src;
+
+      // Используем метод decode() для ожидания загрузки
+      img
+        .decode()
+        .then(() => {
+          setCurrentImage(src); // Обновляем изображение только после полной загрузки
+        })
+        .catch((error) => {
+          console.error("Ошибка загрузки изображения:", error);
+        });
+    };
+
+    // Логика для выбора изображения в зависимости от пола
     if (userGender === "Male") {
-      setCurrentImage("/images/char/Tark.png");
+      preloadImage("/images/char/Tark.png");
     } else if (userGender === "Female") {
-      setCurrentImage("/images/char/Rose.png");
+      preloadImage("/images/char/Rose.png");
     } else {
-      setCurrentImage("/images/backgrounds/spark_loader.gif"); // Дефолтное изображение
+      preloadImage("/images/backgrounds/spark_loader.gif"); // Дефолтное изображение
     }
   }, [userGender]); // Срабатывает при изменении userGender
 
