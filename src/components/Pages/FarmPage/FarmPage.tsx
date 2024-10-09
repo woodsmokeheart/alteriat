@@ -32,10 +32,10 @@ export const FarmPage = () => {
       preloadImage("/images/char/Tark.png");
     } else if (userGender === "Female") {
       preloadImage("/images/char/Rose.png");
-    } else {
-      preloadImage("/images/backgrounds/spark_loader.gif"); // Дефолтное изображение
     }
   }, [userGender]); // Срабатывает при изменении userGender
+
+  console.log(userGender, "userGender");
 
   return (
     <div
