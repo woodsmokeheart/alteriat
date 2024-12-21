@@ -34,12 +34,14 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  -webkit-touch-callout: none;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 
 input {
