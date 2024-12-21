@@ -9,16 +9,19 @@ export const FarmPage = () => {
   return (
     <div className={css.wrapper}>
       <HeaderFarm />
-      <button
-        className={`${css.fingerprint} ${isPressed ? css.active : ""}`}
-        onMouseDown={() => setIsPressed(true)}
-        onMouseUp={() => setIsPressed(false)}
-        onMouseLeave={() => setIsPressed(false)}
-        onTouchStart={() => setIsPressed(true)}
-        onTouchEnd={() => setIsPressed(false)}
-      >
-        <IconFingerprint width={100} height={100} />
-      </button>
+      <div className={css.fingerprint_container}>
+        <button
+          className={`${css.fingerprint} ${isPressed ? css.active : ""}`}
+          onMouseDown={() => setIsPressed(true)}
+          onMouseUp={() => setIsPressed(false)}
+          onMouseLeave={() => setIsPressed(false)}
+          onTouchStart={() => setIsPressed(true)}
+          onTouchEnd={() => setIsPressed(false)}
+        >
+          <IconFingerprint width={100} height={100} />
+        </button>
+      </div>
+
       <Footer />
     </div>
   );

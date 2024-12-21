@@ -13,14 +13,27 @@
   opacity: 0.1;
 }
 
-.fingerprint {
-  color: #898c90;
+.fingerprint_container {
   position: absolute;
   right: 0;
   left: 0;
   bottom: 20%;
   display: flex;
+  align-items: center;
   justify-content: center;
+}
+
+.fingerprint {
+  color: #898c90;
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
 }
 
 .fingerprint.active::before {
