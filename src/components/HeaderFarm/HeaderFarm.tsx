@@ -5,8 +5,10 @@ import { IconGroups } from "assets/svg/IconGroups";
 import { IconMilitaryTech } from "assets/svg/IconMilitaryTech";
 import { IconEmojiObjects } from "assets/svg/IconEmojiObjects";
 import css from "./HeaderFarm.module.css";
+import { useCreateFarmStore } from "components/store/farmStore";
 
 export const HeaderFarm = () => {
+  const { accountScore } = useCreateFarmStore();
   return (
     <div className={css.wrapper}>
       {/* рейтинги */}
@@ -19,7 +21,7 @@ export const HeaderFarm = () => {
       </button>
       <div className={css.containerScore}>
         <IconEmojiObjects width={16} height={16} />
-        <div className={css.score}>14 572 188 INT</div>
+        <div className={css.score}>{accountScore} INT</div>
       </div>
       {/* реферы */}
       <button className={css.button}>

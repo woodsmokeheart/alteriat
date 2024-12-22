@@ -11,6 +11,12 @@
   justify-content: center;
 }
 
+.timer {
+  font-size: 32px;
+  color: white;
+  margin-bottom: 20px;
+}
+
 .carousel_facts {
   position: absolute;
   right: 0;
@@ -20,8 +26,7 @@
   color: #fff;
   text-align: center;
 
-  border: 1px solid #fff;
-
+  border: 0.5px solid #d29922;
   border-radius: 14px;
   -webkit-border-radius: 14px;
   -moz-border-radius: 14px;
@@ -57,12 +62,12 @@
 
 @keyframes slideIn {
   0% {
-    transform: translateY(100%); /* Начинаем ниже блока */
-    opacity: 0; /* Прозрачность */
+    transform: translateY(100%);
+    opacity: 0;
   }
   100% {
-    transform: translateY(0); /* Конечное положение */
-    opacity: 1; /* Полная видимость */
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -74,6 +79,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.round_over_text {
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+
+  border: 0.5px solid #9e6a03;
+  background-color: #212830;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #d29922;
+  padding: 6px 16px;
 }
 
 .fingerprint {
