@@ -120,7 +120,7 @@ export const FarmPage = () => {
                     setAccountScore(farmScore); // Сохраняем очки
                     setFarmScore(() => 0); // Сбрасываем текущие очки фарма
                     setIsRoundOver(false); // Убираем флаг завершения
-                    setTimeLeft(10); // Сбрасываем таймер
+                    setTimeLeft(120); // Сбрасываем таймер
                     setCurrentFact(0); // Возвращаемся к первому факту
                     setIsPressed(false); // Сбрасываем состояние нажатия
                   }}
