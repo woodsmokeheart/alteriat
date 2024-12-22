@@ -1,18 +1,12 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { Footer } from "components/Footer/Footer";
 import { IconFingerprint } from "assets/svg/IconFingerprint";
 import { HeaderFarm } from "components/HeaderFarm/HeaderFarm";
-import css from "./FarmPage.module.css";
 import { TriangleSpinner } from "components/Loaders/Triangle/TriangleSpinner";
-import React from "react";
+import { mockShortFacts } from "./mockShortFacts";
 
-const facts = [
-  "Черный квадрат нарисовал Малевич",
-  "2 x 2 = 4",
-  "Скорость света 299 792 км/с",
-  "Площадь круга равна πr²",
-  "Солнце — это звезда",
-];
+import css from "./FarmPage.module.css";
 
 export const FarmPage = () => {
   const [isLoader, setIsLoader] = useState(false);
@@ -24,8 +18,8 @@ export const FarmPage = () => {
   const handlePressStart = () => {
     setIsPressed(true);
     const interval = window.setInterval(() => {
-      setCurrentFact((prevFact) => (prevFact + 1) % facts.length);
-    }, 1000);
+      setCurrentFact((prevFact) => (prevFact + 1) % mockShortFacts.length);
+    }, 1500);
     setFactInterval(interval);
   };
 
@@ -53,7 +47,7 @@ export const FarmPage = () => {
           <HeaderFarm />
           <div className={css.content}>
             <div className={css.carousel_facts}>
-              <p>{facts[currentFact]}</p>
+              <p key={currentFact}>{mockShortFacts[currentFact]}</p>
             </div>
             <div className={css.fingerprint_container}>
               <button
