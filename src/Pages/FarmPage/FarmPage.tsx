@@ -111,7 +111,7 @@ export const FarmPage = () => {
             <div className={css.timer}>{formatTime(timeLeft)}</div>
             <div className={css.carousel_container}>
               <div className={css.farm_score}>
-                <p>{farmScore} points received</p>
+                <p>{farmScore} очков собрано</p>
               </div>
               <div className={css.carousel_facts}>
                 <p key={currentFact}>{mockShortFacts[currentFact]}</p>

@@ -3,22 +3,30 @@
   bottom: 0;
   right: 0;
   left: 0;
-
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px;
+  justify-content: space-around;
+  padding: 20px 20px 25px;
+}
+
+@keyframes lightWave {
+  0% {
+    background-position: -150% 0;
+  }
+  100% {
+    background-position: 150% 0;
+  }
 }
 
 .button {
+  position: relative; /* Для псевдоэлемента */
   border-radius: 100px;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  -ms-border-radius: 100px;
-  -o-border-radius: 100px;
-
   border: 0.5px solid #3d444d;
-  background-color: #212830;
+  background: linear-gradient(
+    145deg,
+    #1e252d,
+    #252c36
+  ); /* Лёгкий объемный градиент */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,4 +34,25 @@
   width: 50px;
   height: 50px;
   color: #898c90;
+  overflow: hidden; /* Скрывает выходящий за пределы контент */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5),
+    /* Тень внутри */ -2px -2px 5px rgba(60, 65, 70, 0.2); /* Светлая подсветка сверху */
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    /* Почти прозрачный свет */ transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: lightWave 5s infinite; /* Медленная анимация */
+  pointer-events: none; /* Чтобы псевдоэлемент не блокировал нажатия */
 }
