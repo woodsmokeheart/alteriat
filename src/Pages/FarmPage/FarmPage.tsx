@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Footer } from "components/Footer/Footer";
 import { IconFingerprint } from "assets/svg/IconFingerprint";
 import { HeaderFarm } from "components/HeaderFarm/HeaderFarm";
@@ -28,7 +28,7 @@ export const FarmPage = () => {
 
   const { farmScore } = useCreateFarmStore();
 
-  const clearAllIntervals = () => {
+  const clearAllIntervals = useCallback(() => {
     if (scoreInterval !== null) {
       clearInterval(scoreInterval);
       setScoreInterval(null);
@@ -37,7 +37,7 @@ export const FarmPage = () => {
       clearInterval(factInterval);
       setFactInterval(null);
     }
-  };
+  }, [factInterval, scoreInterval]);
 
   const handlePressStart = () => {
     setIsPressed(true);
@@ -85,7 +85,7 @@ export const FarmPage = () => {
 
       return () => clearInterval(timer);
     }
-  }, [isTimerRunning, timeLeft]);
+  }, [clearAllIntervals, isTimerRunning, timeLeft]);
 
   useEffect(() => {
     setIsLoader(true);
