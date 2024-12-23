@@ -1,5 +1,4 @@
 import React from "react";
-import { init, initData, viewport, swipeBehavior } from "@telegram-apps/sdk";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { FarmPage } from "Pages/FarmPage/FarmPage";
@@ -11,14 +10,6 @@ import { BoostersPage } from "Pages/BoostersPage/BoostersPage";
 import { GamesPage } from "Pages/GamesPage/GamesPage";
 
 import "./App.module.css";
-
-init();
-
-// viewport.mount();
-
-// initData.restore();
-// viewport.expand();
-// swipeBehavior.disableVertical(true);
 
 function App() {
   return (
