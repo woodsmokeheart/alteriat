@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  hapticFeedback,
-  init,
-  initData,
-  invoice,
-  mainButton,
-  themeParams,
-  viewport,
-} from "@telegram-apps/sdk";
+import { init, initData, viewport, swipeBehavior } from "@telegram-apps/sdk";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { FarmPage } from "Pages/FarmPage/FarmPage";
@@ -26,6 +18,7 @@ viewport.mount();
 
 initData.restore();
 viewport.expand();
+swipeBehavior.disableVertical(true);
 
 function App() {
   return (
