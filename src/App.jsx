@@ -1,4 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
+import {
+  hapticFeedback,
+  init,
+  initData,
+  invoice,
+  mainButton,
+  themeParams,
+  viewport,
+} from "@telegram-apps/sdk";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { FarmPage } from "Pages/FarmPage/FarmPage";
@@ -11,15 +20,14 @@ import { GamesPage } from "Pages/GamesPage/GamesPage";
 
 import "./App.module.css";
 
+init();
+
+viewport.mount();
+
+initData.restore();
+viewport.expand();
+
 function App() {
-  useEffect(() => {
-    const tg = window.Telegram.WebApp; // Получаем объект webapp телеграма
-
-    tg.expand(); // Расширяем на все окно
-    // tg.requestFullscreen();
-
-    // Bot API 8.0+ Метод, который запрашивает открытие мини-приложения в полноэкранном режиме. Несмотря на то, что в полноэкранном режиме заголовок прозрачен, рекомендуется, чтобы мини-приложение устанавливало цвет заголовка с помощью метода setHeaderColor. Этот цвет помогает определить контрастный цвет для строки состояния и других элементов управления пользовательского интерфейса.
-  }, []);
   return (
     <Router>
       <div className="App">
