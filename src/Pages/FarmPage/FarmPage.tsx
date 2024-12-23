@@ -109,9 +109,15 @@ export const FarmPage = () => {
           <HeaderFarm />
           <div className={css.content}>
             <div className={css.timer}>{formatTime(timeLeft)}</div>
-            <div className={css.carousel_facts}>
-              <p key={currentFact}>{mockShortFacts[currentFact]}</p>
+            <div className={css.carousel_container}>
+              <div className={css.farm_score}>
+                <p>{farmScore} points received</p>
+              </div>
+              <div className={css.carousel_facts}>
+                <p key={currentFact}>{mockShortFacts[currentFact]}</p>
+              </div>
             </div>
+
             <div className={css.fingerprint_container}>
               {isRoundOver ? (
                 <button
