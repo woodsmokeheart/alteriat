@@ -14,11 +14,11 @@ import "./App.module.css";
 
 init();
 
-viewport.mount();
+// viewport.mount();
 
-initData.restore();
-viewport.expand();
-swipeBehavior.disableVertical(true);
+// initData.restore();
+// viewport.expand();
+// swipeBehavior.disableVertical(true);
 
 function App() {
   return (
