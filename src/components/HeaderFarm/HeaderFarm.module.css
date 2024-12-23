@@ -5,6 +5,54 @@
   margin: 20px;
 }
 
+.username {
+  font-size: 16px;
+  color: #9e6a03;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 140;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.username::before,
+.username::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(to right, #000, rgba(0, 0, 0, 0));
+  z-index: 1;
+}
+
+.username::before {
+  left: 0;
+}
+
+.username::after {
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.username span {
+  display: inline-block;
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.button_container {
+  display: flex;
+  align-items: center;
+}
+
 .button {
   border-radius: 100px;
   -webkit-border-radius: 100px;
@@ -38,6 +86,10 @@
   flex-shrink: 0;
   color: #d29922;
   padding: 6px 16px;
+}
+
+.tops {
+  margin-left: 5px;
 }
 
 .score {
