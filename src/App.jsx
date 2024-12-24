@@ -8,6 +8,12 @@ import { ProfilePage } from "./Pages/ProfilePage/ProfilePage";
 import { WalletPage } from "./Pages/WalletPage/WalletPage";
 
 import { TriangleSpinner } from "./components/Loaders/Triangle/TriangleSpinner";
+import {
+  setFirstName,
+  setUsername,
+  setLanguageCode,
+  setUserID,
+} from "./components/store/userStore";
 
 import "./App.module.css";
 
@@ -19,7 +25,11 @@ function App() {
     const tg = window.Telegram.WebApp; // Получаем объект webapp телеграма
     tg.expand(); // Расширяем на все окно
     setUser(tg.initDataUnsafe.user); // Сохраняем данные пользователя
-  }, []);
+    setFirstName(user.first_name);
+    setUsername(user.username);
+    setLanguageCode(user.language_code);
+    setUserID(user.id);
+  }, [user]);
 
   useEffect(() => {
     setIsLoader(true);

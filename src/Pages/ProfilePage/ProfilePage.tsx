@@ -1,13 +1,14 @@
+import { useCreateUserStore } from "components/store/userStore";
 import css from "./ProfilePage.module.css";
 
 export const ProfilePage = ({ user }: { user: any }) => {
+  const { firstName, username, languageCode, userID } = useCreateUserStore();
   return (
     <div className={css.wrapper}>
-      <p>{user.first_name}:1</p>
-      <p> {user.last_name}:2</p>
-      <p> {user.username}:3</p>
-      <p> ({user.language_code}):4</p>
-      <p>{user.id}:5</p>
+      <p>{firstName}:1</p>
+      <p> {username}:2</p>
+      <p> {languageCode}:3</p>
+      <p>{userID}:4</p>
     </div>
   );
 };
