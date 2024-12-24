@@ -1,9 +1,10 @@
-import React from "react";
-import { IconEmojiObjects } from "assets/svg/IconEmojiObjects";
-import css from "./HeaderFarm.module.css";
 import { useCreateFarmStore } from "components/store/farmStore";
-import { IconEqualizer } from "assets/svg/IconEqualizer";
 import cn from "classnames";
+import { IconEmojiObjects } from "assets/svg/IconEmojiObjects";
+import { IconEqualizer } from "assets/svg/IconEqualizer";
+
+
+import css from "./HeaderFarm.module.css";
 
 export const HeaderFarm = () => {
   const { accountScore } = useCreateFarmStore();

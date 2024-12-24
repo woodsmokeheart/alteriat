@@ -1,11 +1,14 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { Footer } from "components/Footer/Footer";
+import { useCallback, useEffect, useState } from "react";
+
 import { IconFingerprint } from "assets/svg/IconFingerprint";
+
 import { HeaderFarm } from "components/HeaderFarm/HeaderFarm";
-import { TriangleSpinner } from "components/Loaders/Triangle/TriangleSpinner";
+import { Footer } from "components/Footer/Footer";
+
 import { mockShortFacts } from "./mockShortFacts";
 
 import css from "./FarmPage.module.css";
+
 import {
   setAccountScore,
   setFarmScore,
@@ -13,7 +16,6 @@ import {
 } from "components/store/farmStore";
 
 export const FarmPage = () => {
-  const [isLoader, setIsLoader] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
 
   const [currentFact, setCurrentFact] = useState(0);
@@ -87,13 +89,6 @@ export const FarmPage = () => {
     }
   }, [clearAllIntervals, isTimerRunning, timeLeft]);
 
-  useEffect(() => {
-    setIsLoader(true);
-    setTimeout(() => {
-      setIsLoader(false);
-    }, 3000);
-  }, []);
-
   const formatTime = (seconds: number) => {
     const minutes = Math.floor(seconds / 60);
     const secs = seconds % 60;
@@ -102,56 +97,48 @@ export const FarmPage = () => {
 
   return (
     <div className={css.wrapper}>
-      {isLoader ? (
-        <TriangleSpinner />
-      ) : (
-        <React.Fragment>
-          <HeaderFarm />
-          <div className={css.content}>
-            <div className={css.timer}>{formatTime(timeLeft)}</div>
-            <div className={css.carousel_container}>
-              <div className={css.farm_score}>
-                <p>{farmScore} очков собрано</p>
-              </div>
-              <div className={css.carousel_facts}>
-                <p key={currentFact}>{mockShortFacts[currentFact]}</p>
-              </div>
-            </div>
-
-            <div className={css.fingerprint_container}>
-              {isRoundOver ? (
-                <button
-                  className={css.round_over_text}
-                  onClick={() => {
-                    setAccountScore(farmScore); // Сохраняем очки
-                    setFarmScore(() => 0); // Сбрасываем текущие очки фарма
-                    setIsRoundOver(false); // Убираем флаг завершения
-                    setTimeLeft(120); // Сбрасываем таймер
-                    setCurrentFact(0); // Возвращаемся к первому факту
-                    setIsPressed(false); // Сбрасываем состояние нажатия
-                  }}
-                >
-                  Claim now {farmScore} INT
-                </button>
-              ) : (
-                <button
-                  className={`${css.fingerprint} ${
-                    isPressed ? css.active : ""
-                  }`}
-                  onMouseDown={handlePressStart}
-                  onMouseUp={handlePressEnd}
-                  onMouseLeave={handlePressEnd}
-                  onTouchStart={handlePressStart}
-                  onTouchEnd={handlePressEnd}
-                >
-                  <IconFingerprint width={90} height={90} />
-                </button>
-              )}
-            </div>
+      <HeaderFarm />
+      <div className={css.content}>
+        <div className={css.timer}>{formatTime(timeLeft)}</div>
+        <div className={css.carousel_container}>
+          <div className={css.farm_score}>
+            <p>{farmScore} очков собрано</p>
           </div>
-          <Footer />
-        </React.Fragment>
-      )}
+          <div className={css.carousel_facts}>
+            <p key={currentFact}>{mockShortFacts[currentFact]}</p>
+          </div>
+        </div>
+
+        <div className={css.fingerprint_container}>
+          {isRoundOver ? (
+            <button
+              className={css.round_over_text}
+              onClick={() => {
+                setAccountScore(farmScore); // Сохраняем очки
+                setFarmScore(() => 0); // Сбрасываем текущие очки фарма
+                setIsRoundOver(false); // Убираем флаг завершения
+                setTimeLeft(120); // Сбрасываем таймер
+                setCurrentFact(0); // Возвращаемся к первому факту
+                setIsPressed(false); // Сбрасываем состояние нажатия
+              }}
+            >
+              Claim now {farmScore} INT
+            </button>
+          ) : (
+            <button
+              className={`${css.fingerprint} ${isPressed ? css.active : ""}`}
+              onMouseDown={handlePressStart}
+              onMouseUp={handlePressEnd}
+              onMouseLeave={handlePressEnd}
+              onTouchStart={handlePressStart}
+              onTouchEnd={handlePressEnd}
+            >
+              <IconFingerprint width={90} height={90} />
+            </button>
+          )}
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 };

@@ -1,34 +1,34 @@
 import { IconMonetization } from "assets/svg/IconMonetization";
 import { IconShine } from "assets/svg/IconShine";
-
-import css from "./Footer.module.css";
 import { IconAccountBalanceWallet } from "assets/svg/IconAccountBalanceWallet";
 import { IconPersone } from "assets/svg/IconPersone";
 import { IconFingerprint } from "assets/svg/IconFingerprint";
+
+import css from "./Footer.module.css";
 
 export const Footer = () => {
   return (
     <div className={css.wrapper}>
       {/* заработок (три таба - ежедневный вход, общие задания и игры) */}
-      <button className={css.button}>
+      <a href={"/earn"} className={css.button}>
         <IconMonetization />
-      </button>
+      </a>
       {/* магазин скинов  и бустов (два таба) */}
-      <button className={css.button}>
+      <a href={"/market"} className={css.button}>
         <IconShine />
-      </button>
+      </a>
       {/* майнинг */}
-      <button className={css.button}>
+      <a href={"/"} className={css.button}>
         <IconFingerprint />
-      </button>
+      </a>
       {/* профиль (рефераллы , ачивки, рейтинг) */}
-      <button className={css.button}>
+      <a href={"/profile"} className={css.button}>
         <IconPersone />
-      </button>
+      </a>
       {/* кошелек */}
-      <button className={css.button}>
+      <a href={"/wallet"} className={css.button}>
         <IconAccountBalanceWallet />
-      </button>
+      </a>
     </div>
   );
 };
