@@ -9,7 +9,7 @@ import css from "./Footer.module.css";
 export const Footer = () => {
   return (
     <div className={css.wrapper}>
-      {/* заработок (три таба - ежедневный вход, общие задания и игры) */}
+      {/* заработок (три таба - ежедневный вход?, общие задания и игры) */}
       <a href={"/earn"} className={css.button}>
         <IconMonetization />
       </a>
