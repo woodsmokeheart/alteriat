@@ -1,7 +1,7 @@
 import { useCreateUserStore } from "components/store/userStore";
 import css from "./ProfilePage.module.css";
 
-export const ProfilePage = ({ user }: { user: any }) => {
+export const ProfilePage = () => {
   const { firstName, username, languageCode, userID } = useCreateUserStore();
   return (
     <div className={css.wrapper}>

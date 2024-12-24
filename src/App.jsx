@@ -29,7 +29,7 @@ function App() {
     setUsername(user.username);
     setLanguageCode(user.language_code);
     setUserID(user.id);
-  }, [user]);
+  }, []);
 
   useEffect(() => {
     setIsLoader(true);
