@@ -24,12 +24,15 @@ function App() {
   useEffect(() => {
     const tg = window.Telegram.WebApp; // Получаем объект webapp телеграма
     tg.expand(); // Расширяем на все окно
-    setUser(tg.initDataUnsafe.user); // Сохраняем данные пользователя
-    setFirstName(user.first_name);
-    setUsername(user.username);
-    setLanguageCode(user.language_code);
-    setUserID(user.id);
-  }, []);
+    const telegramUser = tg.initDataUnsafe?.user; // Проверяем наличие initDataUnsafe и user
+    if (telegramUser) {
+      setUser(telegramUser); // Сохраняем данные пользователя
+      setFirstName(telegramUser.first_name || "");
+      setUsername(telegramUser.username || "");
+      setLanguageCode(telegramUser.language_code || "");
+      setUserID(telegramUser.id || "");
+    }
+  }, [user]);
 
   useEffect(() => {
     setIsLoader(true);

@@ -5,10 +5,10 @@ export const ProfilePage = () => {
   const { firstName, username, languageCode, userID } = useCreateUserStore();
   return (
     <div className={css.wrapper}>
-      <p>{firstName}:1</p>
-      <p> {username}:2</p>
-      <p> {languageCode}:3</p>
-      <p>{userID}:4</p>
+      <p>{firstName}</p>
+      <p> {username}</p>
+      <p> {languageCode}</p>
+      <p>{userID}</p>
     </div>
   );
 };

@@ -1,17 +1,17 @@
 import { createStore, useStore } from "./store";
 
 export type createUserStoreState = {
-  firstName: string;
-  username: string;
-  languageCode: string;
-  userID: string;
+  firstName?: string;
+  username?: string;
+  languageCode?: string;
+  userID?: string;
 };
 
 const initialState: createUserStoreState = {
-  firstName: "",
-  username: "",
-  languageCode: "",
-  userID: "",
+  firstName: "firstName",
+  username: "username",
+  languageCode: "languageCode",
+  userID: "userID",
 };
 
 export const createUserStore = createStore<createUserStoreState>(initialState);
