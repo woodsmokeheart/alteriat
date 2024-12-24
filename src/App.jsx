@@ -20,6 +20,7 @@ import "./App.module.css";
 function App() {
   const [isLoader, setIsLoader] = useState(false);
   const [user, setUser] = useState({});
+  console.log("app");
 
   useEffect(() => {
     const tg = window.Telegram.WebApp; // Получаем объект webapp телеграма
