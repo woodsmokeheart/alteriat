@@ -1,5 +1,5 @@
-import styles from "./EarnPage.module.css";
+import { PageLayout } from "components/Layouts/PageLayout/PageLayout";
 
 export const EarnPage = () => {
-  return <div className={styles.wrapper}>EarnPage</div>;
+  return <PageLayout>EarnPage</PageLayout>;
 };

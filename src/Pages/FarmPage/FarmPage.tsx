@@ -1,10 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-
 import { IconFingerprint } from "assets/svg/IconFingerprint";
-
 import { HeaderFarm } from "components/HeaderFarm/HeaderFarm";
-import { Footer } from "components/Footer/Footer";
-
 import { mockShortFacts } from "./mockShortFacts";
 
 import css from "./FarmPage.module.css";
@@ -14,6 +10,7 @@ import {
   setFarmScore,
   useCreateFarmStore,
 } from "components/store/farmStore";
+import { PageLayout } from "components/Layouts/PageLayout/PageLayout";
 
 export const FarmPage = () => {
   const [isPressed, setIsPressed] = useState(false);
@@ -96,7 +93,7 @@ export const FarmPage = () => {
   };
 
   return (
-    <div className={css.wrapper}>
+    <PageLayout>
       <HeaderFarm />
       <div className={css.content}>
         <div className={css.timer}>{formatTime(timeLeft)}</div>
@@ -138,7 +135,6 @@ export const FarmPage = () => {
           )}
         </div>
       </div>
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };

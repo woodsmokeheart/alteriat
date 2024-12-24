@@ -1,5 +1,5 @@
-import css from "./WalletPage.module.css";
+import { PageLayout } from "components/Layouts/PageLayout/PageLayout";
 
 export const WalletPage = () => {
-  return <div className={css.wrapper}>WalletPage</div>;
+  return <PageLayout>WalletPage</PageLayout>;
 };
