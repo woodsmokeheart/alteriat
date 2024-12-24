@@ -1,6 +1,5 @@
-import React from "react";
-import css from "./MarketPage.module.css";
+import { PageLayout } from "components/Layouts/PageLayout/PageLayout";
 
 export const MarketPage = () => {
-  return <div className={css.wrapper}>MarketPage</div>;
+  return <PageLayout>MarketPage</PageLayout>;
 };
