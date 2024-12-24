@@ -1,0 +1,51 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.overlayIn {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+}
+
+.content {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 2px 4px;
+}
+
+.contentDesktop {
+  z-index: 100;
+  width: 100%;
+  position: absolute;
+  padding: 0;
+  top: 70px;
+  right: 0;
+  bottom: 70px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.contentMobile {
+  z-index: 100;
+  width: 100%;
+  position: absolute;
+  border-radius: 0;
+  padding: 0;
+  inset: 0;
+  top: 70px;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  border-top: 1px solid rgba(210, 153, 34, 0.58);
+}
