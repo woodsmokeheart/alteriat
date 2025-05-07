@@ -1,0 +1,129 @@
+.app {
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+@media (min-width: 768px) {
+  .app {
+    max-width: 768px;
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .app {
+    max-width: 1024px;
+  }
+}
+
+.appContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+}
+
+.errorBanner {
+  background-color: #fee2e2;
+  border-bottom: 1px solid #ef4444;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.errorBanner p {
+  color: #dc2626;
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.errorBanner button {
+  background: none;
+  border: none;
+  color: #dc2626;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+}
+
+.nav {
+  background-color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.walletAddress {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: #666;
+  background-color: #f5f5f5;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLinks a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.navLinks a:hover {
+  background-color: #f0f0f0;
+}
+
+.main {
+  flex: 1;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Стили для кнопки кошелька */
+:global(.wallet-adapter-button) {
+  background-color: #9945FF !important;
+  border-radius: 4px !important;
+  padding: 0.75rem 1.5rem !important;
+  font-family: inherit !important;
+}
+
+:global(.wallet-adapter-button:hover) {
+  background-color: #8935EE !important;
+}
+
+:global(.wallet-adapter-modal-wrapper) {
+  background-color: white !important;
+} 

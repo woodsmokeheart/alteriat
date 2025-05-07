@@ -1,0 +1,155 @@
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profileHeader {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.profileHeader h1 {
+  color: #333;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.infoGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.infoGroup label {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.infoGroup p {
+  color: #333;
+  font-size: 1.1rem;
+  margin: 0;
+  padding: 0.5rem;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  word-break: break-all;
+}
+
+.error {
+  color: #dc3545;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.button {
+  background-color: #9945FF;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin: 1rem auto;
+  display: block;
+}
+
+.button:hover {
+  background-color: #8935EE;
+}
+
+.editButton {
+  padding: 0.5rem 1rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+}
+
+.editButton:hover {
+  background-color: #357abd;
+}
+
+.editForm {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.postForm {
+  margin-bottom: 2rem;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  resize: vertical;
+}
+
+.textarea {
+  min-height: 100px;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.post {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post p {
+  margin: 0 0 0.5rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.post small {
+  color: #666;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 2rem;
+  }
+
+  .profileHeader h1 {
+    font-size: 2rem;
+  }
+
+  .editButton {
+    font-size: 1rem;
+  }
+} 
