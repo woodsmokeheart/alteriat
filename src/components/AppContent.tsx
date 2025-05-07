@@ -1,4 +1,5 @@
-import React, { memo } from 'react';
+import * as React from 'react';
+import { memo } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useProfileContext } from '../context/ProfileContext';
 import Login from '../pages/Login';
