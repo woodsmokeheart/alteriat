@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { WalletProvider } from '@solana/wallet-adapter-react';
 import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets';
@@ -9,7 +9,7 @@ import '@solana/wallet-adapter-react-ui/styles.css';
 
 const wallets = [new PhantomWalletAdapter()];
 
-function App() {
+const App: React.FC = () => {
   return (
     <Router>
       <WalletProvider wallets={wallets} autoConnect>
@@ -21,6 +21,6 @@ function App() {
       </WalletProvider>
     </Router>
   );
-}
+};
 
 export default App;
